@@ -1,8 +1,32 @@
 const express=require("express");
 const router=express.Router();
+const userModel=require("../models/user");
+const bcrypt = require("bcrypt");
 
-router.get("/",(req,res)=>{
-    res.send("This is user profile")
+router.get("/create",(req,res)=>{
+    res.render("signup.ejs");
+});
+
+router.post("/create",(req,res)=>{
+    if(req.body.password===req.body.confirmPassword){
+        let{fullname, email, password}=req.body;
+    
+    bcrypt.genSalt(10,(err,salt)=>{
+        if(err) return res.error(err);
+       bcrypt.hash(password,salt,async (err,hash)=>{
+        if(err) return res.error(err);
+            let createdUser=await userModel.create({
+                fullname,
+                email,
+                password:hash
+            });
+            res.send(createdUser);
+       })
+    });
+    }
+    else{
+        res.send("Passwords and confirm password do not match");
+    }
 });
 
 module.exports = router;

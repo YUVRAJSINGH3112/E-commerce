@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100vh;
+    width: 100vw;
+}
+.button{
+    display: block;
+    color: white;
+    padding: 10px 90px;
+    background-color: rgb(71, 146, 243);
+    border-radius: .25rem;
+}
+form{
+    background: linear-gradient(145deg, #e6e6e6, #ffffff); 
+    box-shadow: 4px 4px 10px #bfbfbf, -4px -4px 10px #ffffff; 
+    border-radius: 12px;
+    padding: 20px; 
+    width: 22rem; 
+    font-family: Arial, sans-serif;
+}
+.icon{
+    position: absolute;
+    top: 58%;
+    right: 42%;
+}

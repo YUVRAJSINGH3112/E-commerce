@@ -1,5 +1,5 @@
 const mongoose= require("mongoose");
-mongoose.connect("mongodb:://localhost:27017/QuickKart");
+
 
 const userSchema=mongoose.Schema({
     fullname:String,
@@ -14,7 +14,7 @@ const userSchema=mongoose.Schema({
     },
     cart:{
         type:Array,
-        deffault:[]
+        default:[]
     },
     isAdmin:Boolean
 });
