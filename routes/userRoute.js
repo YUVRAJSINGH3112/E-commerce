@@ -2,6 +2,7 @@ const express=require("express");
 const router=express.Router();
 const userModel=require("../models/user");
 const bcrypt = require("bcrypt");
+const cookie=require("cookie-parser")
 
 router.get("/create",(req,res)=>{
     res.render("signup.ejs");
@@ -27,6 +28,10 @@ router.post("/create",(req,res)=>{
     else{
         res.send("Passwords and confirm password do not match");
     }
+});
+
+router.get('/login',(req,res)=>{
+    res.render('login.ejs');
 });
 
 module.exports = router;
