@@ -9,18 +9,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="flex justify-center items-center">
-    <form action="/user/create" method="post">
+
+    <form action="/user/login" method="post">
 
         <h6 class="text-xl mb-3">Login</h6>
     
         <label for="email">Email*</label>
-        <input type="email" class="px-1 py-2 rounded-lg mb-3 w-11/12 border border-slate-300 outline-none" name="email" required placeholder="Email">
+        <input type="email" class="px-1 py-2 rounded-lg mb-3 w-full border border-slate-300 outline-none" name="email" required placeholder="Email">
     
         <label for="password">Password*</label>
-        <input type="password" name="password" class="px-1 py-2 rounded-lg mb-3 border w-11/12 border-slate-300 outline-none password" required placeholder="Password" autocomplete="new-password"><span class="icon text-slate-300"><i class="fa-regular fa-eye"></i></span>
+        <input type="password" name="password" class="px-1 py-2 rounded-lg mb-3 border w-full border-slate-300 outline-none password" required placeholder="Password" autocomplete="new-password"><span class="icon text-slate-300"><i class="fa-regular fa-eye"></i></span>
     
         <input type="submit" class="button" value="Login">
-    
+        <p class="mt-1">Didn't have an account? <a class="ml-1 text-blue-400" href="/user/signup">SignUp</a></p>
+
        </form>
 </body>
 </html>
